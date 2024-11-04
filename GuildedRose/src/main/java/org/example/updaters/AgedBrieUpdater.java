@@ -1,6 +1,6 @@
 package org.example.updaters;
 
-import org.example.Item;
+import org.example.domain.Item;
 
 public class AgedBrieUpdater implements ItemUpdater {
     @Override
@@ -8,7 +8,7 @@ public class AgedBrieUpdater implements ItemUpdater {
         item.sellIn--;
         if (item.quality < 50) {
             item.quality++;
-            item.price++;
+            item.price.increaseAmount(1);
         }
     }
 }

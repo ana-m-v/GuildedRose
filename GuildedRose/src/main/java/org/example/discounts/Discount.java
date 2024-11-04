@@ -1,6 +1,10 @@
 package org.example.discounts;
 
+import org.example.domain.Item;
+
+import java.util.List;
+
 public interface Discount {
-    double calculateDiscountAmount(double totalPrice);
+    double apply(double total, List<Item> items);
 }
 

@@ -1,6 +1,6 @@
 package org.example.updaters;
 
-import org.example.Item;
+import org.example.domain.Item;
 
 public class SulfurasUpdater implements ItemUpdater {
     public void update(Item item) {

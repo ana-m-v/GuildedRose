@@ -1,6 +1,6 @@
 package org.example.updaters;
 
-import org.example.Item;
+import org.example.domain.Item;
 
 public class BackstagePassUpdater implements ItemUpdater {
     @Override
@@ -9,7 +9,7 @@ public class BackstagePassUpdater implements ItemUpdater {
 
         if (item.sellIn < 0) {
             item.quality = 0;
-            item.price = 0;
+            item.price.setAmount(0);
             return;
         }
 
@@ -18,12 +18,12 @@ public class BackstagePassUpdater implements ItemUpdater {
 
             if (item.sellIn < 5 && item.quality < 50) {
                 item.quality++;
-                item.price++;
+                item.price.increaseAmount(1);
             }
 
             if (item.sellIn < 10 && item.quality < 50) {
                 item.quality++;
-                item.price++;
+                item.price.increaseAmount(1);
             }
         }
     }
